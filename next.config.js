@@ -22,6 +22,12 @@ const nextConfig = {
   },
   reactStrictMode: true,
   redirects,
+  compiler: {
+    styledComponents: true,
+  },
+  experimental: {
+    scrollRestoration: true,
+  },
 }
 
 export default withPayload(nextConfig)

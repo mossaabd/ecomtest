@@ -21,25 +21,31 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const { isEnabled } = await draftMode()
 
   return (
-    <html className={cn(GeistSans.variable, GeistMono.variable)} lang="en" suppressHydrationWarning>
+    <html
+      className={cn(GeistSans.variable, GeistMono.variable)}
+      lang="en"
+      suppressHydrationWarning
+    >
       <head>
         <InitTheme />
         <link href="/favicon.ico" rel="icon" sizes="32x32" />
         <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+        <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
       </head>
-      <body>
-        <Providers>
-          <AdminBar
-            adminBarProps={{
-              preview: isEnabled,
-            }}
-          />
-          <LivePreviewListener />
-
-          <Header />
-          {children}
-          <Footer />
-        </Providers>
+      <body suppressHydrationWarning>
+        <div id="app-root" suppressHydrationWarning>
+          <Providers>
+            <AdminBar
+              adminBarProps={{
+                preview: isEnabled,
+              }}
+            />
+            <LivePreviewListener />
+            <Header />
+            <main suppressHydrationWarning>{children}</main>
+            <Footer />
+          </Providers>
+        </div>
       </body>
     </html>
   )
