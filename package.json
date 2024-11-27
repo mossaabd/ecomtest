@@ -19,9 +19,9 @@
   },
   "dependencies": {
     "@payloadcms/db-mongodb": "latest",
+    "@payloadcms/email-nodemailer": "^3.2.1",
     "@payloadcms/live-preview-react": "latest",
     "@payloadcms/next": "latest",
-    "@payloadcms/payload-cloud": "latest",
     "@payloadcms/plugin-form-builder": "latest",
     "@payloadcms/plugin-nested-docs": "latest",
     "@payloadcms/plugin-redirects": "latest",
@@ -40,6 +40,7 @@
     "graphql": "^16.8.2",
     "jsonwebtoken": "9.0.2",
     "lucide-react": "^0.378.0",
+    "mongodb": "^6.11.0",
     "next": "^15",
     "payload": "latest",
     "payload-admin-bar": "^1.0.6",
